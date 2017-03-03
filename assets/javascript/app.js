@@ -82,12 +82,12 @@ var questions = {
       }, 
 
   q10:{
-      question:"Who has won the most Academy Awards?",
-      answer1:"James Cameron",
-      answer2:"Walt Disney",
-      answer3:"Katherine Hepburn",
-      answer4:"Steven Spielberg",
-      correctAnswer: "Walt Disney",
+      question:"Which of the following is not a gas?",
+      answer1:"Nitrogen",
+      answer2:"Oxygen",
+      answer3:"Helium",
+      answer4:"Mercury",
+      correctAnswer:"Mercury",
       }
     }       
 
@@ -130,24 +130,26 @@ var questions = {
   function loadQuestion(){
   var objKeys = Object.keys(questions);
   console.log(objKeys);
-
+  var timer = $("<h2>Time Remaining</h2>");
   for (var i = 0; i < objKeys.length; i++) {
   var qDiv =  $("<div>")
-  var questionDiv = $("<div>").text(objKeys.question)
+  var questionDiv = $("<div>").text(questions[objKeys[i]].question)
   console.log(objKeys[i]);
   console.log(questions[objKeys[i]]);
   console.log(questions[objKeys[i]].answer1);
   var a1Div = $("<div class='answer'>").text(questions[objKeys[i]].answer1)
-  var a2Div = $("<div class='answer'>").text(objKeys.answer2)
-  var a3Div = $("<div class='answer'>").text(objKeys.answer3)
-  var a4Div = $("<div class='answer'>").text(objKeys.answer4)
-  qDiv.append(questionDiv).append(a1Div).append(a2Div).append(a3Div).append(a4Div);
-  return qDiv;
-  $("#start").empty();
-  if (this.countDownTimer()==0){
+  var a2Div = $("<div class='answer'>").text(questions[objKeys[i]].answer2)
+  var a3Div = $("<div class='answer'>").text(questions[objKeys[i]].answer3)
+  var a4Div = $("<div class='answer'>").text(questions[objKeys[i]].answer4)
+  $(".loadQuestion").append(qDiv).append(questionDiv).append(a1Div).append(a2Div).append(a3Div).append(a4Div);
+  $("#start").hide();
+  if (countDownTimer()==0){
   objKeys++;
   }
   }
+  var radioBtn = $('<input type="radio" name="rbtnCount" />');
+  $(".answer").prepend(radioBtn);
+  $(".loadQuestion").prepend(timer);
   } 
 
   // Change from current questions to next question ++
