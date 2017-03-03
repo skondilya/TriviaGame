@@ -1,0 +1,21 @@
+.container{
+	width : 980px;
+	background: url("../images/backgrd.jpg");
+	height: 100vh;
+}
+
+body{
+background: black;
+}
+
+#questionHolder{
+background: yellow;	
+text-align: center;
+margin:auto;
+height: 500px;
+}
+
+#start{
+background: pink;
+width: 30%;	
+}
