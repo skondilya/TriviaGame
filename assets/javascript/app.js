@@ -168,7 +168,7 @@ function computeScore(){
   // Display the results to the player, incorrectly and correctly
   function result(){
   var score =  $("<p>",{id: 'score'});
-  score.append("All Done! You got "+correctAnswers+" correct answers.Incorrect answer: "+incorrectAnswers+" Unanswered:"+unAnswered);
+  score.append("All Done! You got "+correctAnswers+" correct answers. Incorrect answer: "+incorrectAnswers+" Unanswered: "+unAnswered);
   return score;
   }
 
